@@ -106,3 +106,92 @@ body {
     background-color: black;
     color: #fff;
 }
+
+/* about section stytles */
+.about-section{
+    background-color: #F7F6F6;
+    padding: 7rem 0;
+}
+.about-section .section-header h2{
+    font-size: 3rem;
+    font-weight: 600;
+}
+.about-section .section-content{
+    font-weight: 500;
+    font-size: 1.5rem;
+    padding: 2rem 0;
+}
+.about-section .section-header, .section-content{
+
+    display: flex;
+    justify-content: center;
+}
+.about-section .section-content p{
+    width: 800px;
+    text-align: center;
+}
+
+/* footer-section styles */
+.footer-section{
+    background-color: black;
+    color: #fff;
+    padding: 5rem 0;
+}
+.footer-links .footer-list{
+    list-style: none;
+    font-weight: 600;
+}
+.footer-links .footer-list a{
+    color: #fff;
+    text-decoration: none;
+}
+.footer-links .footer-list .email-link{
+    text-decoration: underline;
+}
+.footer-section .footer-container{
+    width: 900px;
+}
+.footer-email-form{
+    display: block;
+}
+.footer-email-form #footer-email-input{
+    background-color: black;
+    border: none;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    margin-bottom: 1rem;
+}
+.footer-email-form .footer-email-label{
+    color: grey;
+    font-weight: 550;
+}
+.footer-email-form #check-subscribe{
+    transform: scale(1.5);
+    margin-right: 10px;
+}
+.footer-email-form .footer-email-button{
+    padding: 10px 40px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-weight: 550;
+}
+.footer-email-form .footer-email-button:hover{
+    background-color: black;
+    color: #fff;
+    border: 1px solid white;
+}
+
+/* copyright footer */
+.copyright-footer{
+     background-color: #757575;
+     color: black;
+     padding: 1rem 0 0 0;
+     display: flex;
+     justify-content: center;
+     font-size: 1.1rem;
+     font-family: monospace;
+     font-weight: 550;
+}
+.copyright-footer a{
+    color: black;
+}
