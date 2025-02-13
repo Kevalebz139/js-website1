@@ -66,8 +66,16 @@ body {
 }
 .navbar-section .orders-link{
     color: black;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     padding-left: 1rem;
+    position: relative;
+}
+.navbar-section .cart-quantity{
+    position: absolute;
+    top: 1px;
+    left: 27px;
+    font-size: 0.7rem;
+    color: #fff;
 }
 
 /* products section styles */
