@@ -1,44 +1,51 @@
 .orders-section{
-    padding: 10rem 0;
+    padding: 7rem 0;
 }
-.orders-section .section-container{
-    width: 800px;
-    display: flex;
-    justify-content: center;
+.product-information{
+    color: black;
+    font-weight: 600;
 }
-.cart-grid{
-    display: flex;
-}
-.cart-grid .product-image{
+.product-information img{
     height: 100px;
     width: 100px;
-    object-fit: cover;
-    border: 0.5px solid black;
-    margin-right: 10px;
+    border: 1px solid black;
+    margin-right: 20px;
 }
-.cart-grid .product-data{
+.main-content{
+    width: 980px;
+}
+.price-quantity-container{
+    display: flex;
     font-weight: 600;
-    margin: 0 10px;
 }
-.cart-grid .product-quantity-container{
-    margin-left: 80px;
+
+.product-quantity-container{
+    margin-left: 20px;
+    margin-top: 10px;
 }
-.cart-grid .product-order-price{
-    margin: 0 50px;
-    font-weight: 550;
+.product-order-price{
+    margin-left: 50px;
+    margin-top: 10px;
 }
-.cart-grid .remove-from-cart-button{
-    border: none;
+.trash-can-button{
+    margin-left: 50px;
+    margin-top: 10px;
+}
+.cart-grid{
+    border-bottom: 0.5px solid grey;
+    margin-bottom: 2rem;
+}
+.remove-from-cart-button{
     background-color: #fff;
+    border: none;
+    font-size: 1.2rem;
 }
-.cart-grid .remove-from-cart-button i{
-    font-size: 1.3rem;
-}
+
 .order-summary{
     font-weight: 550;
 }
 .order-summary .final-order{
-    font-size: 1.4rem;
+    font-size: 1.3rem;
 }
 .order-summary .checkout-button{
     width: 100%;
@@ -48,12 +55,18 @@
     font-weight: 550;
     color: #fff;
 }
-
+.order-summary .checkout-button:hover{
+    background-color: #08578A;
+}
+.promocode-content{
+    padding: 3rem 0;
+}
 .promocode-content .promocode-button{
     border: none;
     background-color: #fff;
     color: #0A75B2;
     font-weight: 550;
+    padding-top: 10px;
 }
 .promocode-content .promocode-input{
     padding: 5px;
@@ -70,17 +83,29 @@
 .promocode-content .apply-promocode-button:hover{
     color: #31adec;
 }
-@media only screen and (max-width: 768px){
-    .cart-grid .product-quantity-container{
-        margin-left: 0;
+
+@media only screen and (max-width: 768px) {
+    .product-quantity-container{
+        margin-left: 20px;
     }
-    .cart-grid .product-order-price{
-        margin: 0 20px;
-    } 
+    .product-order-price{
+        margin-left: 20px;
+    }
+    .trash-can-button{
+        margin-left: 20px;
+    }
 }
-@media only screen and (max-width: 450px){
-    .cart-grid{
-        display: block;
-        margin-left: 2rem;
+
+@media only screen and (max-width: 576px) {
+
+    .price-quantity-container{
+        margin-bottom: 10px;
+    }
+    .cart-grid-raw{
+        display: flex;
+        justify-content: center;
+    }
+    .product-quantity-container{
+        margin-left: 0px;
     }
 }
