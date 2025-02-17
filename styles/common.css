@@ -8,6 +8,8 @@ body {
 }
 .navbar-section{
     background-color: #fff;
+    position: sticky;
+    top: 0;
 }
 .navbar-brand .brand-name{
     font-weight: 600;
@@ -106,6 +108,7 @@ body {
     border: none;
     border-bottom: 1px solid #fff;
     width: 100%;
+    max-width: 100%;
     margin-bottom: 1rem;
 }
 .footer-email-form .footer-email-label{

@@ -20,8 +20,8 @@ products.forEach((product) => {
             $${(product.priceCents / 100).toFixed(2)}
         </div>
         <div>
-            <button class="add-to-cart-button js-add-to-cart button-primary mt-3"
-        data-product-id="${product.id}">
+        <button class="add-to-cart-button js-add-to-cart button-primary mt-3"
+            data-product-id="${product.id}">
             Add to Cart
         </button>
         </div>
@@ -46,7 +46,8 @@ updateCartQuantity();
 
 document.querySelectorAll('.js-add-to-cart')
   .forEach((button) => {
-    button.addEventListener('click', () => {
+    button.addEventListener('click', (event) => {
+      event.stopPropagation(); // Prevents the div's click event from firing
       const productId = button.dataset.productId;//data-product-is is in kebab case and it automatically changes into camel case which is productId
 
       addToCart(productId);

@@ -140,5 +140,10 @@ renderOrderSummary();
 updateCartQuantity();
 const orderDetails = document.querySelector('.checkout-button');
 orderDetails.addEventListener('click', () => {
-    window.location.href = "checkout.html";
+    if(cart.length === 0) {
+        alert('Add something n cart');
+    }
+    else {
+        window.location.href = "checkout.html";
+    }    
 });

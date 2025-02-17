@@ -5,6 +5,13 @@ body {
     font-family: Arial;
 }
 
+/* hero section styles */
+.hero-section .hero-image{
+    height: 900px;
+    overflow: hidden;
+    object-fit: cover;
+}
+
 /* products section styles */
 .products-section .product-container>div{
     display: flex;
@@ -63,4 +70,49 @@ body {
 .about-section .section-content p{
     width: 800px;
     text-align: center;
+}
+
+/* service section styles */
+.service-image{
+    max-width: 100%;
+    object-fit: cover;
+    width: 100%;
+    height: 700px;
+}
+.services-section .sticky-image{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+
+}
+.services-section{
+    padding: 7rem 0;
+    min-height: 120vh;
+}
+.visible-div{
+    position: relative;
+    padding: 3rem 0;
+    z-index: 10;
+}
+.services-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.8rem;
+    border: 1px solid #fff;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 25px;
+    padding: 1rem;
+}
+@media only screen and (max-width: 1000px) {
+    .services-card{
+        font-size: 1.5rem;
+    }
+}
+@media only screen and (max-width: 768px) {
+    .services-card{
+        font-size: 1.3rem;
+        margin-top: 1rem;
+    }
 }
