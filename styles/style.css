@@ -13,6 +13,9 @@ body {
 }
 
 /* products section styles */
+.products-section{
+    padding: 5rem 0;
+}
 .products-section .product-container>div{
     display: flex;
     justify-content: center;
@@ -24,9 +27,10 @@ body {
   
 .product-container .product-image{
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     margin-bottom: 20px;
     border-radius: 15px;
+    aspect-ratio: 1 / 1;
 }
 .product-container .add-to-cart-button{
     width: 80%;
@@ -73,7 +77,7 @@ body {
 }
 
 /* service section styles */
-.service-image{
+/* .service-image{
     max-width: 100%;
     object-fit: cover;
     width: 100%;
@@ -93,7 +97,19 @@ body {
     position: relative;
     padding: 3rem 0;
     z-index: 10;
-}
+} */
+ .services-section{
+    background-image: url(/assets/images/laura-chouette-R2DDxvSNxkM-unsplash.jpg);
+    background-color: grey;
+    background-blend-mode: multiply;
+    background-position: 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    background-attachment: fixed;
+    padding: 35rem 0 3rem 0;
+ }
 .services-card{
     display: flex;
     flex-direction: column;
@@ -104,15 +120,23 @@ body {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 25px;
     padding: 1rem;
+    height: 100%;
+}
+.services-card:hover{
+    background: rgba(255, 255, 255, 0.4);
+}
+.services-card img{
+    height: 50px;
+    width: 50px;
 }
 @media only screen and (max-width: 1000px) {
     .services-card{
-        font-size: 1.5rem;
+        font-size: 1.4rem;
     }
 }
 @media only screen and (max-width: 768px) {
     .services-card{
-        font-size: 1.3rem;
-        margin-top: 1rem;
+        font-size: 1.1rem;
+        overflow: hidden;
     }
 }

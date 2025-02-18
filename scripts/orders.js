@@ -1,6 +1,10 @@
 import {cart, removeFromCart, updateCartQuantity} from './cart.js';
 import {products} from './products.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
+import {navbarShadow} from './common.js'
+
+
+navbarShadow();
 
 document.querySelector(".js-promocode-button").addEventListener("click", function(event) {
     event.preventDefault();
@@ -77,6 +81,7 @@ function renderCartSummary() {
             // renderCartSummary();
             renderOrderSummary();
             updateCartQuantity();
+            enterOrderDetails();
         });
     });
 };
@@ -126,7 +131,7 @@ function renderOrderSummary() {
             </div>
         </div>
         <div class="text-center mt-3">
-            <button class="checkout-button">Enter Order Details</button>
+            <button class="checkout-button js-checkout-button">Enter Order Details</button>
             <small class="d-block text-muted mt-2">Expected Delivery By ${formatDeliveryDate}</small>
         </div>
     `
@@ -135,15 +140,19 @@ function renderOrderSummary() {
 
 };
 
-renderOrderSummary();
-
-updateCartQuantity();
-const orderDetails = document.querySelector('.checkout-button');
+function enterOrderDetails() {
+    const orderDetails = document.querySelector('.js-checkout-button');
 orderDetails.addEventListener('click', () => {
     if(cart.length === 0) {
         alert('Add something n cart');
     }
     else {
         window.location.href = "checkout.html";
-    }    
+    }
 });
+};
+
+renderOrderSummary();
+updateCartQuantity();
+enterOrderDetails();
+

@@ -52,8 +52,8 @@ export function addToCart(productId) {
 
   export function updateCartQuantity() {
     let cartQuantity = 0;
-  
-  
+    
+    
     if (cart) {
       cart.forEach((cartItem) => {
         cartQuantity += cartItem.quantity;

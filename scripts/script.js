@@ -1,12 +1,14 @@
 import {cart, addToCart, updateCartQuantity} from './cart.js';
 import {products} from './products.js';
+import { navbarShadow } from './common.js';
 
+navbarShadow();
 
 let productsHTML = '';
 
 products.forEach((product) => {
   productsHTML +=`
-  <div class="product-container col-lg-3 col-md-6">
+  <div class="product-container js-product-container col-lg-3 col-md-6" data-container-id="${product.id}">
         <div class="product-image-container">
             <img class="product-image"
             src="${product.image}" data-image-number="${product.productNumber}">
@@ -55,3 +57,19 @@ document.querySelectorAll('.js-add-to-cart')
   
   });
 });
+
+document.querySelectorAll('.js-product-container')
+.forEach((container) => {
+  container.addEventListener('click', (event, products) => {
+    if (event.target.classList.contains("js-add-to-cart")) {
+      return; 
+    }
+    const containerId = container.dataset.containerId;
+    localStorage.setItem('container', containerId);
+    window.location.href="product-details.html";
+  });
+});
+
+
+
+

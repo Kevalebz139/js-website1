@@ -1,0 +1,111 @@
+.item-data{
+    display: flex;
+    justify-content: center;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 7rem 0;
+}
+.item-data .home-page-link a{
+    text-decoration: none;
+    color: black;
+}
+.item-data .home-page-link span{
+    color: grey;
+}
+.item-data .item-container{
+    width: 1000px;
+}
+@media only screen and (max-width: 1200px) {
+    .item-data .item-container{
+        width: 900px;
+    }
+}
+@media only screen and (max-width: 1000px) {
+    .item-data .item-container{
+        width: 800px;
+    }
+}
+@media only screen and (max-width: 992px) {
+    .item-data .item-container{
+        width: 50%;
+    }
+    .item-data .item-description{
+        margin-bottom: 3rem;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .item-data .item-container{
+        width: 70%;
+    }
+}
+.item-data .item-image{
+    border: 1px solid rgb(206, 206, 206);
+}
+.item-data .item-image img{
+    width: 100%;
+}
+.item-data .item-description{
+    font-weight: 600;
+    padding-top: 1rem;
+}
+.item-data .item-name{
+    font-size: 1.4rem;
+    margin-bottom: 0;
+}
+.item-data .item-id{
+    font-size: 0.9rem;
+    color: grey;
+}
+.item-data .item-price{
+    font-size: 1.3rem;
+}
+.item-data .item-color{
+    font-size: 1.1rem;
+}
+.item-data .item-quantity-input{
+    margin-bottom: 2rem;
+}
+.item-data .item-add-to-cart-button{
+    width: 100%;
+    padding: 8px 0;
+    background-color: #0A75B2;
+    border: none;
+    font-weight: 550;
+    color: #fff;
+    margin-bottom: 1rem;
+}
+.item-data .item-add-to-cart-button:hover{
+    background-color: #08578A;
+}
+.item-data .accordion-button{
+    font-weight: 600;
+}
+.item-data .accordion-button:focus{
+    box-shadow: none;
+}
+.item-data .accordion-button:not(.collapsed){
+    background-color: transparent;
+}
+.item-data .item-socials-logo{
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 1.5rem;
+    
+}
+.item-data .item-socials-logo a{
+    color: black;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    background-color: #fff;
+}
+.item-data .item-socials-logo a:hover{
+    color: #fff;
+    background-color: black;
+}
