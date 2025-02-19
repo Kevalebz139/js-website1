@@ -50,7 +50,7 @@ function renderCartSummary() {
                 </div>
                 <div class="col-sm-6 col-8 price-quantity-container align-items-start">
                     <div class="product-quantity-container">
-                        <input aria-label="Choose quantity" aria-live="assertive" type="number" min="1" max="99999" step="1" class="quantity-input" value="1">
+                        <p>Quantity: ${cartItem.quantity}</p>
                     </div>
                     <div class="product-order-price">
                         $${((matchingProduct.priceCents * cartItem.quantity) / 100).toFixed(2)}

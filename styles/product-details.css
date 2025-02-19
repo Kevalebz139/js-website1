@@ -38,12 +38,35 @@
         width: 70%;
     }
 }
-.item-data .item-image{
-    border: 1px solid rgb(206, 206, 206);
-}
-.item-data .item-image img{
+
+.item-data .item-image .main-image{
     width: 100%;
+    border: 1px solid rgb(206, 206, 206);
+    height: auto;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out; 
 }
+
+.item-image .thumbnails {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.item-image .thumbnail {
+    width: 60px;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+}
+
+.item-image .thumbnail:hover {
+    transform: scale(1.1);
+}
+
+
 .item-data .item-description{
     font-weight: 600;
     padding-top: 1rem;

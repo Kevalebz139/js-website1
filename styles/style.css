@@ -16,21 +16,48 @@ body {
 .products-section{
     padding: 5rem 0;
 }
-.products-section .product-container>div{
+.products-section .product-name, .product-price, .product-add-button{
     display: flex;
     justify-content: center;
+    margin-top: 15px;
 }
 .product-container{
     font-weight: 600;
     padding: 3rem 0;
 }
-  
-.product-container .product-image{
+.product-container .product-image-container{
+    position: relative;
     width: 100%;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+}
+.product-container .product-image{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     margin-bottom: 20px;
     border-radius: 15px;
     aspect-ratio: 1 / 1;
+    transition: opacity 0.5s ease-in-out;
+}
+.product-container .product-image.default {
+    opacity: 1;
+}
+
+.product-container .product-image.hover {
+    opacity: 0;
+}
+
+.product-container:hover .product-image.default {
+    opacity: 0;
+}
+
+.product-container:hover .product-image.hover {
+    opacity: 1;
 }
 .product-container .add-to-cart-button{
     width: 80%;
@@ -109,7 +136,8 @@ body {
     background-attachment: fixed;
     padding: 35rem 0 3rem 0;
  }
-.services-card{
+
+.services-card {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -120,10 +148,50 @@ body {
     border-radius: 25px;
     padding: 1rem;
     height: 100%;
+    position: relative;
+    overflow: hidden;
 }
-.services-card:hover{
-    background: rgba(255, 255, 255, 0.4);
+/*
+.services-card::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    background-image: linear-gradient(to bottom right, white, grey);
+    box-shadow: rgb(86, 8, 2) 0px 0px 15px;
+    z-index: -1;
+    display: none;
+    transform: scale(0);
+
 }
+.services-card:hover::after{
+    display: block;
+    transition: background-image 3s ease;
+    transform: scale(1);
+} */
+.services-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+    background-image: linear-gradient(to bottom right, white, grey);
+    box-shadow: rgb(86, 8, 2) 0px 0px 15px 15px;
+    z-index: -1;
+    
+    transform: translate(-50%, -50%) scale(0); 
+    transition: transform 0.5s ease-in-out;
+}
+
+.services-card:hover::after {
+    transform: translate(-50%, -50%) scale(1);
+}
+
 .services-card img{
     height: 50px;
     width: 50px;
