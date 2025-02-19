@@ -7,7 +7,7 @@ body {
 
 /* hero section styles */
 .hero-section .hero-image{
-    height: 900px;
+    height: 850px;
     overflow: hidden;
     object-fit: cover;
 }
@@ -67,7 +67,6 @@ body {
     padding: 2rem 0;
 }
 .about-section .section-header, .section-content{
-
     display: flex;
     justify-content: center;
 }

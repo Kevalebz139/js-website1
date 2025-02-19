@@ -10,7 +10,7 @@ products.forEach((product) => {
   productsHTML +=`
   <div class="product-container js-product-container col-lg-3 col-md-6" data-container-id="${product.id}">
         <div class="product-image-container">
-            <img class="product-image"
+            <img class="product-image" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="500" data-aos-easing="ease-in-out" 
             src="${product.image}" data-image-number="${product.productNumber}">
         </div>
     
