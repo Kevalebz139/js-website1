@@ -1,6 +1,7 @@
 import {updateCartQuantity} from "./cart.js";
-import {navbarShadow} from './common.js'
+import {navbarShadow,collapseNavbar} from './common.js'
 
 
 navbarShadow();
+collapseNavbar();
 updateCartQuantity();

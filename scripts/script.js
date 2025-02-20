@@ -1,15 +1,16 @@
 import {cart, addToCart, updateCartQuantity} from './cart.js';
 import {products} from './products.js';
-import { navbarShadow } from './common.js';
+import { navbarShadow, collapseNavbar } from './common.js';
 
 navbarShadow();
+collapseNavbar();
 
 let productsHTML = '';
 
 products.forEach((product) => {
   productsHTML +=`
   <div class="product-container js-product-container col-lg-3 col-md-6" data-container-id="${product.id}">
-        <div class="product-image-container">
+        <div class="product-image-container" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-in-out">
             <img class="product-image default" src="${product.image}" data-image-number="${product.productNumber}">
             <img class="product-image hover" src="${product.hoverImage}" data-image-number="${product.productNumber}">
         </div>

@@ -13,51 +13,47 @@
 
     <!-- navbar section starts -->
     <section class="navbar-section" id="navbar">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="index.html">
-                        <h2 class="brand-name">Tote</h2>
-                        <h6 class="secondary-brand">Funky Printed Bags</h6>
-                    </a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav mb-2 mb-lg-0">
-                        <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Shop</a>
-                        </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">FAQ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Gift Card</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <form class="d-flex ms-auto" role="search">
+        <nav class="navbar">
+            <div class="navbar-container">
+                <a href="index.html" class="navbar-brand">
+                    <h2 class="brand-name">Tote</h2>
+                    <h6 class="secondary-brand">Funky Printed Bags</h6>
+                </a>
+                <button class="show-navbar-button"><i class="fa-solid fa-bars"></i></button>
+                <div class="collapsed-navbar ms-auto">
+                    <div class="navbar-links">
+                        <ul>
+                            <li>
+                                <a href="#" class="nav-link active">Shop</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">About</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">Gift Card</a>
+                            </li>
+                            <li>
+                                <a href="#" class="nav-link">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <form class="d-flex ms-auto search-form" role="search">
                         <i class="fa-solid fa-magnifying-glass search-icon"></i>
                         <input class="search-button" type="search" placeholder="Search..." aria-label="Search">
                     </form>
                     <div class="login-btn">
                         <button class="btn btn-outline-success login-button" type="submit"><i class="fa-solid fa-circle-user"></i> &nbsp; Log In</button>
                     </div>
-                    <div>
-                        <a href="orders.html" class="orders-link">
-                            <p class="cart-quantity js-cart-quantity"></p>
-                            <i class="fa-solid fa-cart-shopping orders-icon"></i>
-                        </a>
-                    </div>                       
-                    </div>
                 </div>
-            </nav>
-        </div>
+                <div class="orders-page-link">
+                    <a href="orders.html" class="orders-link">
+                        <p class="cart-quantity js-cart-quantity">0</p>
+                        <i class="fa-solid fa-cart-shopping orders-icon"></i>
+                    </a>
+                </div>
+            </div>
+        </nav>
     </section>
     <!-- navbar section ends -->
 

@@ -1,8 +1,9 @@
 import {products} from './products.js';
-import {navbarShadow} from './common.js';
+import {navbarShadow,collapseNavbar} from './common.js';
 import {cart,addToCart,updateCartQuantity} from './cart.js';
 
 navbarShadow();
+collapseNavbar();
 updateCartQuantity();
 const containerId = localStorage.getItem('container');
 console.log(containerId);
