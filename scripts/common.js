@@ -12,7 +12,7 @@ export function navbarShadow(){
     });
   };
 
-  export function collapseNavbar() {
+export function collapseNavbar() {
     const navBarButton = document.querySelector('.show-navbar-button');
     const navBar = document.querySelector('.collapsed-navbar');
     const fullNavBar = document.querySelector('.navbar-section');
@@ -33,3 +33,4 @@ export function navbarShadow(){
         }
     });
 }
+

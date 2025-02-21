@@ -1,10 +1,12 @@
 import {cart, addToCart, updateCartQuantity} from './cart.js';
 import {products} from './products.js';
-import { navbarShadow, collapseNavbar } from './common.js';
+import { navbarShadow, collapseNavbar} from './common.js';
+import {wishlist, renderWishList, collapseWishList} from './wishlist.js';
 
 navbarShadow();
 collapseNavbar();
-
+renderWishList();
+collapseWishList();
 let productsHTML = '';
 
 products.forEach((product) => {
@@ -22,12 +24,19 @@ products.forEach((product) => {
         <div class="product-price mt-3">
             $${(product.priceCents / 100).toFixed(2)}
         </div>
+
         <div class="product-add-button">
           <button class="add-to-cart-button js-add-to-cart button-primary mt-3"
             data-product-id="${product.id}">
             Add to Cart
           </button>
         </div>
+        <div class="wishlist-add-button">
+        <button class="add-to-wishlist-button js-add-to-wishlist button-primary mt-3"
+          data-product-id="${product.id}">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+    </div>
     </div>
   `;
 });

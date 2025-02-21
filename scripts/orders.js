@@ -1,11 +1,13 @@
 import {cart, removeFromCart, updateCartQuantity} from './cart.js';
 import {products} from './products.js';
 import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
-import {navbarShadow, collapseNavbar} from './common.js'
-
+import { navbarShadow, collapseNavbar} from './common.js';
+import {wishlist, renderWishList, collapseWishList} from './wishlist.js';
 
 navbarShadow();
 collapseNavbar();
+renderWishList();
+collapseWishList();
 document.querySelector(".js-promocode-button").addEventListener("click", function(event) {
     event.preventDefault();
     
