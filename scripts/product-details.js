@@ -7,9 +7,6 @@ navbarShadow();
 collapseNavbar();
 renderWishList();
 collapseWishList();
-
-navbarShadow();
-collapseNavbar();
 updateCartQuantity();
 const containerId = localStorage.getItem('container');
 console.log(containerId);

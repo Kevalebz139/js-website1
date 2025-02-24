@@ -31,7 +31,7 @@ export function addToCart(productId, itemQuantityValue) {
     if (matchingItem) {
       matchingItem.quantity += itemQuantityValue;
     } else {
-      cart.push({
+      cart.unshift({
         productId: productId,
         quantity: itemQuantityValue
       });

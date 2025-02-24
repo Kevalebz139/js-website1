@@ -2,15 +2,14 @@ import {products} from './products.js'
 export let wishlist = JSON.parse(localStorage.getItem('wishlist'));
 
 if (!wishlist) {
-    wishlist = [{
-        productId: "PROD-1001"
-    },
-    {
-        productId: "PROD-1002"
-    },
-    {
-        productId: "PROD-1003"
-    }];
+    wishlist = [
+    // {
+    //     productId: "PROD-1001"
+    // },
+    // {
+    //     productId: "PROD-1002"
+    // }
+];
 }
 
 function saveWishlistToStorage() {
@@ -27,13 +26,18 @@ export function addToWishlist(productId) {
     });
   
     if (matchingItem) {
-        return;
+        // return;
+        removeFromWishlist(matchingItem.productId);
+        renderWishlistSummary();
+        console.log(wishlist);
     } else {
-      wishlist.push({
+      wishlist.unshift({
         productId: productId
       });
     }
     saveWishlistToStorage();
+    renderWishlistSummary();
+    updateWishlistButtons();
   };
 
   export function removeFromWishlist(productId) {
@@ -45,6 +49,8 @@ export function addToWishlist(productId) {
     });
     wishlist = newWishlist;
     saveWishlistToStorage();
+    renderWishlistSummary();
+    updateWishlistButtons();
   };
 
 //   new changes
@@ -69,6 +75,9 @@ export function renderWishList() {
         <div class="overlay"></div>
 `;
 renderWishlistSummary();
+document.querySelector('.go-to-cart-button').addEventListener('click', () => {
+    window.location.href='orders.html';
+});
 }
 
 
@@ -91,8 +100,6 @@ export function collapseWishList() {
     hideButton.addEventListener('click', () => {
         hideWishList();
     });
-
-
     overLay.addEventListener('click', () => {
         hideWishList();
     });
@@ -101,7 +108,7 @@ export function collapseWishList() {
 
 
 
- function renderWishlistSummary() {
+ export function renderWishlistSummary() {
       let wishlistSummaryHTML = '';
   
       wishlist.forEach((wishlistItem) => {
@@ -124,11 +131,15 @@ export function collapseWishList() {
                     </div>
                     <div class="wishlist-item-details">
                         <p class="product-name">${matchingProduct.name}</p>
-                        <label for="item-quantity-input-${matchingProduct.productNumber}">Quantity</label><br>
-                        <input aria-label="item Quantity" aria-live="assertive" type="number" min="1" max="99" step="1" class="item-quantity-input js-item-quantity-input" id="${matchingProduct.productNumber}" value="1">
+                        <p class="product-color">${matchingProduct.color}</p>
                     </div>
+                    <div class="price-block">
                     <div class="product-price">
                     ${(matchingProduct.priceCents / 100).toFixed(2)}
+                    </div>
+                    <div class="view-product">
+                    <button class="js-view-product-button" data-product-id="${matchingProduct.id}">View Product</button>
+                    </div>
                     </div>
                 </div>
                 <hr>    
@@ -140,3 +151,37 @@ export function collapseWishList() {
   
       document.querySelector('.js-wishlist-container').innerHTML = wishlistSummaryHTML;
   };
+
+    document.addEventListener("DOMContentLoaded", () => {
+        document.querySelectorAll('.js-view-product-button')
+        .forEach(button => {
+            button.addEventListener('click', () => {
+                const containerId = button.dataset.productId;
+                localStorage.setItem('container', containerId);
+                window.location.href="product-details.html";
+            });
+        });
+    });
+
+
+
+  export function updateWishlistButtons() {
+    document.querySelectorAll('.js-add-to-wishlist').forEach(button => {
+        const productId = button.getAttribute('data-product-id');
+  
+        const isInWishlist = wishlist.some(item => item.productId === productId);
+  
+        const icon = button.querySelector('i');
+  
+        if (isInWishlist) {
+            icon.classList.remove('fa-regular');
+            icon.classList.add('fa-solid', 'active');
+        } else {
+            icon.classList.remove('fa-solid', 'active');
+            icon.classList.add('fa-regular');
+        }
+    });
+  }
+  
+  updateWishlistButtons(); 
+

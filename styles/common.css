@@ -284,9 +284,28 @@ body {
 .wishlist-item-details{
     align-self: center;
 }
-.product-price{
+.wishlist-item .product-price{
+    margin-top: 0px;
+}
+.price-block{
+    display: flex;
+    flex-direction: column;
     margin-left: auto;
+    gap: 1rem;
+    justify-content: center;
+}
+.view-product{
+    height: fit-content;
     align-self: center;
+}
+.js-view-product-button{
+    width: fit-content;
+    height: auto;
+    border-radius: 5px;
+    background-color: black;
+    color: aliceblue;
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 .page-switch-button{
     display: flex;
@@ -324,6 +343,9 @@ body {
     }
     .wishlist-item{
         gap: 10px;
+    }
+    .js-view-product-button{
+        font-size: 0.6rem;
     }
 }
 @media only screen and (max-width: 500px) {

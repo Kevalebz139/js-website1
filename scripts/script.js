@@ -1,7 +1,7 @@
 import {cart, addToCart, updateCartQuantity} from './cart.js';
 import {products} from './products.js';
 import { navbarShadow, collapseNavbar} from './common.js';
-import {wishlist, renderWishList, collapseWishList} from './wishlist.js';
+import {wishlist, renderWishList, collapseWishList, addToWishlist, renderWishlistSummary, updateWishlistButtons} from './wishlist.js';
 
 navbarShadow();
 collapseNavbar();
@@ -11,7 +11,7 @@ let productsHTML = '';
 
 products.forEach((product) => {
   productsHTML +=`
-  <div class="product-container js-product-container col-lg-3 col-md-6" data-container-id="${product.id}">
+      <div class="product-container js-product-container col-lg-3 col-md-6" data-container-id="${product.id}">
         <div class="product-image-container" data-aos="flip-left" data-aos-duration="1000" data-aos-delay="100" data-aos-easing="ease-in-out">
             <img class="product-image default" src="${product.image}" data-image-number="${product.productNumber}">
             <img class="product-image hover" src="${product.hoverImage}" data-image-number="${product.productNumber}">
@@ -32,15 +32,28 @@ products.forEach((product) => {
           </button>
         </div>
         <div class="wishlist-add-button">
-        <button class="add-to-wishlist-button js-add-to-wishlist button-primary mt-3"
-          data-product-id="${product.id}">
-          <i class="fa-regular fa-heart"></i>
-        </button>
-    </div>
-    </div>
-  `;
+          <button class="add-to-wishlist-button js-add-to-wishlist button-primary mt-3"
+            data-product-id="${product.id}">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+        </div>
+      </div>
+    `;
 });
 document.querySelector('.js-products-grid').innerHTML = productsHTML;
+
+updateWishlistButtons();
+let addToWishlistButton = document.querySelectorAll('.js-add-to-wishlist');
+ 
+
+addToWishlistButton.forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const productId = button.dataset.productId;
+    addToWishlist(productId);
+    renderWishlistSummary();
+  });
+});
 
 // document.querySelectorAll('.product-image')
 // .forEach((image) => {
@@ -71,9 +84,10 @@ document.querySelectorAll('.js-add-to-cart')
 document.querySelectorAll('.js-product-container')
 .forEach((container) => {
   container.addEventListener('click', (event) => {
-    if (event.target.classList.contains("js-add-to-cart")) {
-      return; 
-    }
+    if (event.target.closest(".js-add-to-cart") || event.target.closest(".js-add-to-wishlist")) {
+      return;
+  }
+  
     const containerId = container.dataset.containerId;
     localStorage.setItem('container', containerId);
     window.location.href="product-details.html";
